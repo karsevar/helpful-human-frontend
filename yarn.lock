@@ -10541,6 +10541,11 @@ sanitize.css@^10.0.0:
   resolved "https://registry.yarnpkg.com/sanitize.css/-/sanitize.css-10.0.0.tgz#b5cb2547e96d8629a60947544665243b1dc3657a"
   integrity sha512-vTxrZz4dX5W86M6oVWVdOVe72ZiPs41Oi7Z6Km4W5Turyz28mrXSJhhEBZoRtzJWIv3833WKVwLSDWWkEfupMg==
 
+sass-google-fonts@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/sass-google-fonts/-/sass-google-fonts-1.0.1.tgz#e6c511417d647978e59543895619f76024662c3e"
+  integrity sha512-K4T1V2OAbVRptC6qvp+6+nEybZ2r5oIsSuANF0sIJBtALpdqMC2Adu01Qfmf8gSO3keVStZEQGdRI6GC4FH5ig==
+
 sass-graph@2.2.5:
   version "2.2.5"
   resolved "https://registry.yarnpkg.com/sass-graph/-/sass-graph-2.2.5.tgz#a981c87446b8319d96dce0671e487879bd24c2e8"

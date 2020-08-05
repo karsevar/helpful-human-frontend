@@ -1,0 +1,20 @@
+.shades-container {
+  width: 100%;
+  height: 40%;
+
+  display: flex;
+  justify-content: space-between;
+
+  .shade-card {
+    overflow: hidden;
+    width: 110px;
+    height: 110px;
+    border: 1px solid red;
+    border-radius: 5px;
+
+    .color-display {
+      width: 100%;
+      height: 83%;
+    }
+  }
+}

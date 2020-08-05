@@ -39,7 +39,7 @@ function ColorDetailComponent(props) {
               <h4>{colorInfo.hexString}</h4>
             </div>
           </div>
-          <ShadesComponent colorInfo={colorInfo} />
+          {/* <ShadesComponent colorInfo={colorInfo} /> */}
         </>
       ) : (
         <></>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./shadesComponent.scss";
 
 function ShadesComponent(props) {
   const colorInfo = props.colorInfo;
@@ -14,8 +15,11 @@ function ShadesComponent(props) {
       : null;
   };
 
-  const rgbToHex = (r, g, b) => {
-    return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  const rgbToHex = (red, green, blue) => {
+    return (
+      "#" +
+      ((1 << 24) + (red << 16) + (green << 8) + blue).toString(16).slice(1)
+    );
   };
 
   const lightenOrDarken = (colorRGB, percent) => {
@@ -30,25 +34,40 @@ function ShadesComponent(props) {
 
   useEffect(() => {
     const colorRGB = hexToRgb(colorInfo.hexString);
-    const darkPercentages = [-0.25, -0.5];
-    const lightPercentages = [0.25, 0.5];
+    const darkPercentages = [-0.3, -0.15];
+    const lightPercentages = [0.15, 0.3];
 
     const darkShades = darkPercentages.map((percentage) => {
       const darkShade = lightenOrDarken(colorRGB, percentage);
-      return rgbToHex(darkShade.r, darkShade.g, darkShade.b);
+      return darkShade;
     });
 
     const lightShades = lightPercentages.map((percentage) => {
       const lightShade = lightenOrDarken(colorRGB, percentage);
-      return rgbToHex(lightShade.r, lightShade.g, lightShade.b);
+      return lightShade;
     });
 
-    setShadesArray([...darkShades, colorInfo.hexString, ...lightShades]);
+    setShadesArray([...darkShades, colorRGB, ...lightShades]);
   }, [colorInfo]);
 
   return (
     <div className='shades-container'>
-      {console.log("from shadesArray state hook", shadesArray)}
+      {console.log("shades array", shadesArray)}
+      {shadesArray.map((shade) => {
+        return (
+          <div className='shade-card'>
+            <div
+              className='color-display'
+              style={{
+                backgroundColor: rgbToHex(shade.r, shade.g, shade.b),
+              }}
+            ></div>
+            <div className='color-title-container'>
+              <h4>{rgbToHex(shade.r, shade.g, shade.b)}</h4>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }

@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import axios from "axios";
 
+import ShadesComponent from "../shadesComponent/shadesComponent";
+
 import "./colorDetailComponent.scss";
 
 function ColorDetailComponent(props) {
@@ -27,15 +29,18 @@ function ColorDetailComponent(props) {
   return (
     <div className='color-detail-container'>
       {colorInfo.name ? (
-        <div className='color-detail-view'>
-          <div
-            className='color-display'
-            style={{ backgroundColor: colorInfo.hexString }}
-          ></div>
-          <div className='color-code-container'>
-            <h4>{colorInfo.hexString}</h4>
+        <>
+          <div className='color-detail-view'>
+            <div
+              className='color-display'
+              style={{ backgroundColor: colorInfo.hexString }}
+            ></div>
+            <div className='color-code-container'>
+              <h4>{colorInfo.hexString}</h4>
+            </div>
           </div>
-        </div>
+          <ShadesComponent colorInfo={colorInfo} />
+        </>
       ) : (
         <></>
       )}

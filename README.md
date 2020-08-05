@@ -73,7 +73,7 @@ The core goals should be completed in full.
 
 - The ColorsParentComponent is used as the containing component for the two routes in the application, `/` and `/colorDetail/:id` that mounts `PaginationComponent` and `ColorDetailComponent` respectively, and `SideMenuComponent`.
 
-- The main purpose of this component is to give structure to where `SideMenuComponent` is placed within the application in relation to `PaginationComponent` and `ColorDetailComponent`, since `SideMenuComponent` will need to remain static between the two routes. In addition, this component gives `SideMenuComponent` the total number of color entries in the database through the hook `totalColors` and `PaginationComponent` the total number of page buttons that need to be rendered to display all the colors through `currentPage` as well as the current paginate value that `SwatchesComponent` needs to send to the server.
+- The main purpose of this component is to give structure to where `SideMenuComponent` is placed within the application in relation to `PaginationComponent` and `ColorDetailComponent`, since `SideMenuComponent` will need to remain static between the two routes. In addition, this component gives `SideMenuComponent` the total number of color entries in the database through the hook `totalColors` and `PaginationComponent` the total number of page buttons that need to be rendered to display all the colors through `Pages`.
 
 - Constraints include the addition of the currentPage hook declaration in the parent component of `PaginationComponent`, the reason for this oversight was switching from the color detail view (`/colorDetail/:id`) to the home view (`/`) the currentPage hook would be overwritten to `1` if the hook was included in `PaginationComponent`.
 

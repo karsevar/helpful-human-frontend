@@ -10,7 +10,9 @@ function SwatchesComponent(props) {
   const [colorData, setColorData] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/getColorsByPagination?page=${currentPage}`)
+      .get(
+        `https://morning-spire-68989.herokuapp.com/getColorsByPagination?page=${currentPage}`
+      )
       .then((results) => {
         // console.log("result", results);
         setColorData(results.data.data.data);

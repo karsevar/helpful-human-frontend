@@ -14,7 +14,7 @@ function ColorsParentComponent(props) {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/getLastIndex")
+      .get("https://morning-spire-68989.herokuapp.com/getLastIndex")
       .then((results) => {
         setTotalColors(results.data.data);
 

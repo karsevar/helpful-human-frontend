@@ -10,7 +10,7 @@ function ColorDetailComponent(props) {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:4000/getColorById/${colorId}`)
+      .get(`https://morning-spire-68989.herokuapp.com/getColorById/${colorId}`)
       .then((results) => {
         // console.log("results from getColorById endpoint", results);
         setColorInfo(results.data.data);

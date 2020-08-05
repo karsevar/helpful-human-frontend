@@ -10,6 +10,7 @@ import ColorDetailComponent from "../colorDetailComponent/colorDetailComponent";
 
 function ColorsParentComponent(props) {
   const [totalColors, setTotalColors] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0);
   const [pages, setPages] = useState([]);
 
   useEffect(() => {
@@ -24,6 +25,7 @@ function ColorsParentComponent(props) {
         }
 
         setPages(pagesArray);
+        setCurrentPage(1);
       })
       .catch((error) => {
         console.log("error message", error);
@@ -36,14 +38,19 @@ function ColorsParentComponent(props) {
       <Route
         exact
         path='/'
-        render={(props) => <PaginationComponent {...props} pages={pages} />}
+        render={(props) => (
+          <PaginationComponent
+            {...props}
+            pages={pages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
+        )}
       />
       <Route
         path='/colorDetail/:id'
         render={(props) => <ColorDetailComponent {...props} />}
       />
-      {console.log("maximum number of pages", pages)}
-      {console.log("maximum number of colors", totalColors)}
     </div>
   );
 }

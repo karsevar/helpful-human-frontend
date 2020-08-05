@@ -4,15 +4,16 @@ import "./paginationComponent.scss";
 import SwatchesComponent from "../swatchesComponent/swatchesComponent";
 
 function PaginationComponent(props) {
+  const pages = props.pages;
+  const history = props.history;
+  const currentPage = props.currentPage;
+  const setCurrentPage = props.setCurrentPage;
+
   const handlePaginationClick = (event, pageNum) => {
-    console.log("page clicked", pageNum);
     setCurrentPage(pageNum);
   };
 
-  const pages = props.pages;
-  const history = props.history;
-
-  const [currentPage, setCurrentPage] = useState(1);
+  // const [currentPage, setCurrentPage] = useState(1);
 
   return (
     <div className='swatches-pagination-container'>

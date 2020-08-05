@@ -20,7 +20,6 @@ function SideMenuComponent(props) {
 
   const handleRandomClick = (event) => {
     const randomNumber = Math.round(Math.random() * (totalColors - 1) + 1);
-    console.log("random number generator test", randomNumber);
     history.push(`/colorDetail/${randomNumber}`);
   };
 
@@ -35,9 +34,9 @@ function SideMenuComponent(props) {
         </button>
       </div>
       <div className='main-color-menu'>
-        {mainColors.map((color) => {
+        {mainColors.map((color, index) => {
           return (
-            <div className='main-color-container'>
+            <div className='main-color-container' key={index}>
               <h3>{color}</h3>
             </div>
           );

@@ -1,0 +1,22 @@
+.swatches-pagination-container {
+  box-sizing: border-box;
+  width: 75%;
+  height: 100%;
+  padding: 60px 25px 45px 25px;
+}
+
+.pagination-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  .page {
+    font-size: 1.9rem;
+    width: 23px;
+    cursor: pointer;
+    color: #363d3c;
+  }
+  .selected-page {
+    border-bottom: solid 2px #363d3c;
+  }
+}
